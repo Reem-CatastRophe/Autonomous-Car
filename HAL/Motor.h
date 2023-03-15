@@ -28,7 +28,10 @@ void MotorSetSpeed(U8);
 void MotorStart();
 void MotorStartRight();
 void MotorStartLeft();
-
+void RightMotorForward();
+void RightMotorReverse();
+void LeftMotorForward();
+void LeftMotorReverse();
 void MotorStop();
 void MotorStopRight();
 void MotorStopLeft();

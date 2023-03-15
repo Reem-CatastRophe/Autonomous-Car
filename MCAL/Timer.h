@@ -2,7 +2,7 @@
  * Timer.h
  *
  *  Created on: Feb 15, 2023
- *      Author: omarM
+ *      Author: reroM
  */
 
 #ifndef MCAL_TIMER_H_
@@ -63,7 +63,7 @@
 #define Timer0PWMMode NonInverted
 #define Timer0PrescalerValue 64
 
-#define Timer1Mode FastPWMMode
+#define Timer1Mode NormalMode
 #define Timer1PWMMode NonInverted
 #define Timer1PrescalerValue 64
 
@@ -77,10 +77,13 @@
 #define Timer2Channel 2
 
 void TimerInit();
+void Timer1Init(U8 Mode);
+
 void TimerSetTime(U32);
 void TimerStart(U8);
 void TimerStop(U8);
 U32  TimerGetTime();
+
 
 void PWMInit(U8);
 void PWMSetDutyCycle(U8,U8);

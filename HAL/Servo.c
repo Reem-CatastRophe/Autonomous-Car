@@ -7,11 +7,16 @@
 
 #include"Servo.h"
 
+
+
 void ServoInit(){
-	PWMInit(Timer1Channel);
+	Timer1Init(FastPWMMode);
 	PWMStart(Timer1Channel);
 }
 
 void ServoSetAngle(U8 ServoAngle){
+	ServoInit();
 	PWMSetDutyCycle(Timer1Channel,3+ServoAngle*(1.0/18));
+//	TimerStop(Timer1Channel);
 }
+

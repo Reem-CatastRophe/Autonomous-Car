@@ -19,14 +19,14 @@ void MotorSetDirection(U8 Direction){
 		case Reverse:
 			DioSetPinVal(GC,HA1,Low);
 			DioSetPinVal(GC,HA2,High);
-			DioSetPinVal(GC,HA3,High);
-			DioSetPinVal(GC,HA4,Low);
+			DioSetPinVal(GC,HA3,Low);
+			DioSetPinVal(GC,HA4,High);
 		break;
 		case Forward:
 			DioSetPinVal(GC,HA1,High);
 			DioSetPinVal(GC,HA2,Low);
-			DioSetPinVal(GC,HA3,Low);
-			DioSetPinVal(GC,HA4,High);
+			DioSetPinVal(GC,HA3,High);
+			DioSetPinVal(GC,HA4,Low);
 		break;
 	}
 }
@@ -39,24 +39,22 @@ void MotorStart(){
 	PWMStart(Timer0Channel);
 }
 
-void MotorStartRight(){
-	MotorStart();
+void MotorStartLeft(){
 	DioSetPinVal(GC,HA1,High);
 	DioSetPinVal(GC,HA2,Low);
 }
 
-void MotorStartLeft(){
-	MotorStart();
-	DioSetPinVal(GC,HA3,Low);
-	DioSetPinVal(GC,HA4,High);
+void MotorStartRight(){
+	DioSetPinVal(GC,HA3,High);
+	DioSetPinVal(GC,HA4,Low);
 }
 
-void MotorStopRight(){
+void MotorStopLeft(){
 	DioSetPinVal(GC,HA1,Low);
 	DioSetPinVal(GC,HA2,Low);
 }
 
-void MotorStopLeft(){
+void MotorStopRight(){
 	DioSetPinVal(GC,HA3,Low);
 	DioSetPinVal(GC,HA4,Low);
 }
@@ -67,6 +65,22 @@ void MotorStop(){
 	DioSetPinVal(GC,HA3,Low);
 	DioSetPinVal(GC,HA4,Low);
 	PWMStop(Timer0Channel);
+}
+void LeftMotorForward(){
+	DioSetPinVal(GC,HA1,High);
+	DioSetPinVal(GC,HA2,Low);
+}
+void LeftMotorReverse(){
+	DioSetPinVal(GC,HA1,Low);
+	DioSetPinVal(GC,HA2,High);
+}
+void RightMotorForward(){
+	DioSetPinVal(GC,HA3,High);
+	DioSetPinVal(GC,HA4,Low);
+}
+void RightMotorReverse(){
+	DioSetPinVal(GC,HA3,Low);
+	DioSetPinVal(GC,HA4,High);
 }
 
 
